@@ -84,7 +84,8 @@ if (ball.y<0){ball.velocityY=12;ball.y=0}
 paddle.y=650;
 if (lazer.isTouching(paddle)){lazer.destroy();shoot=false;score=score-50;}
 if (shoot==false){shoot=true;lazer=createSprite(enemy.x,enemy.y,10,50);lazer.shapeColor="red";lazer.velocityY=10;}
-paddle.x=mouseX
+if (keyDown("RIGHT_ARROW")){paddle.x+=10}
+if (keyDown("LEFT_ARROW")){paddle.x-=10}
 if (lazer.y>700){shoot=false;lazer.destroy();}
 if (ball.y>700){lives--;ball.x=mouseX;ball.y=paddle.y-50;ball.velocityY=10;}
 if (ball.y<0){ball.x=mouseX;ball.y=650;}
